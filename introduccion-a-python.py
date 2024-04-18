@@ -151,6 +151,55 @@ año = int (input("ingresa tu año de nacimiento"))
 añoActual = int (input("Ingresa, el año actual"))
 
 edad = añoActual - año
-print("En este año {} tienes {}".format(año, edad))  
+print("En este año {} tienes {}".format(año, edad)) 
+
+
+
+
+
+
+
+
+def suma():
+    numeroUno = int(input("Escribe el primero numero a sumar "))
+    numeroDos = int(input("Escribe el segundo numeroa sumar "))
+    resultado=numeroUno+numeroDos
+    print(resultado)
+
+
+
+def resta():
+    num1 = int(input("Escriba el primer numero a restar "))
+    num2 = int(input("Escriba el segundo numero a restar "))
+    resultado=num1-num2
+    print(resultado)
+
+
+
+def multiplicacion():
+    num1 = int(input("Escriba el primer numero a multiplicar "))
+    num2 = int(input("Escriba el segundo numero a multiplicar "))
+    resultado=num1*num2
+    print(resultado)
+
+
+def divicion():
+
+    num1 = int(input("Escriba el primer numero a dividir "))
+    num2 = int(input("Escriba el segundo numero a dividir "))
+    resultado=num1/num2
+    print(resultado)
+
+
+print ("Opciones: 1 sumar) 2 restar) 3 multiplicar) 4 dividir ")
+opciones = int(input("Eligue una opcion "))
+if opciones == 1:
+        suma()
+if opciones == 2:
+        resta()
+if opciones == 3:
+        multiplicacion()
+if opciones == 4:
+        divicion()
 
 
