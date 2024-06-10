@@ -1,0 +1,42 @@
+
+#Crear las funciones
+def sumaDosNumeros():
+    num1=int(input("ingrese un numero: "))
+    num2=int(input("Ingrese otro numero: "))
+
+    suma=(num1+num2)
+    print(f"La suma es {suma} ")
+
+#funcion con parametros y sin retorno
+def sumaDosNumerosParametros(num1,num2):
+    suma=(num1+num2)
+    print(f"La suma es {suma} ")
+
+#Funcion sin parametros y con retorno
+def sumaDosNumerosRetorno():
+    num1=int(input("ingrese un numero: "))
+    num2=int(input("Ingrese otro numero: "))
+
+    suma=(num1+num2)
+    print(f"La suma es {suma} ")
+    return suma
+   
+#Funcion con parametros y con retorno
+def sumaDosNumerosParametrosRetorno(num1,num2):
+    suma=(num1+num2)
+    return suma
+
+#Llamar a la funcion creada
+ 
+print(sumaDosNumerosParametrosRetorno(50,50)+100)
+
+
+
+ListaProductos =["Lays","Crizoi","Super 8","Chocman"]
+def agregarProductos():
+    producto=input("Ingrese el nombre del producto: ")
+    ListaProductos.append(producto)
+    print("Producto ingresado correctamente")
+
+def mostrarProductos():
+    print(ListaProductos)    
