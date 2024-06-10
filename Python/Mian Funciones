@@ -1,0 +1,31 @@
+#Archivo principal
+
+from idk2 import *
+import idk2 as funcion
+
+while True:
+    print("\nInventario Casino DUOC\n")
+    print("1.- Agregar producto.")
+    print("2.- Buscar producto.")
+    print("3.- Eliminar producto.")
+    print("4.- Mostrar producto.")
+    print("5.- Salir.")
+    opcion=int(input("Ingrese una opcion: "))
+
+
+    #Llamar a las funciones
+    if (opcion==1):
+        funcion.agregarProductos()
+
+    elif (opcion==2):
+        print()
+    elif (opcion==3):
+        print()
+    elif (opcion==4):
+        funcion.mostrarProductos()
+    elif (opcion==5):
+        print()
+        break
+    else:
+        print("Opcion no valida.")    
+          
