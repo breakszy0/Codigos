@@ -1,0 +1,126 @@
+#Funcion recibe una cantidad variable de argumentos 
+
+#*Args tuplas
+def suma_multiple(*Args):
+    """
+    Recibe una cantidad x de argumentos *args y devuelve
+    una suma total
+    """
+    suma_total=0
+    for numero in Args:
+        suma_total+=numero
+    return suma_total
+#Llamar a la funcion
+resultado_multiple = suma_multiple(1,2,3,4,5,6,7,8,9,10)
+
+print(f"La suma total de: 1,2,3,4,5,6,7,8,9,10 es {resultado_multiple} ")
+
+#2- recibir una cantidad variable de argumentos (nombres) **kwargs Diccionarios.
+
+def saludo_Completo(**kwargs):
+    """
+    Recibe un diccionario e imprime una cadena completa con cada valor.
+    """
+
+    saludo = "Hola"
+    #Declaro un for
+    for clave, valor in kwargs.items():#Desempaquetar el diccionario en claves: valor
+        saludo+=f" {valor}"
+    saludo += " Bienvenido a la clase de funciones"    
+    print(saludo)
+
+#llamamos a la funcion
+saludo_Completo(Nombre= "Alfredo", Apellido= "Ibaceta")
+
+
+#Funcion combinada que usa *args y *kwargs
+def informacion_completa(*args, **kwargs):
+    """
+    Recibe argumentos desde la lista y diccionario y los imprime
+    """
+    print("informacion recibida")
+    for argumentos in args:
+        print(f"Argumentos: {argumentos}")
+    for clave, valor in kwargs.items():
+        print(f"{clave} : {valor}")
+
+#Llamar a la funcion
+informacion_completa(1,2,3,4,5, Nombre="Alfredo", Comuna="Puerto Montt")
+
+#FUncion compleha que devuelve varios valores
+def estadisticas(*args):
+    """
+    Recibe varios argukmentos y devuelve varias estadisticas:
+    suma, promedio, minimo y un maximo
+    """
+    suma_total = sum(args)
+    promedio = suma_total / len(args)
+    maximo = max(args)
+    minimo = min(args)
+    return suma_total, promedio, maximo, minimo
+
+suma_total, promedio, maximo, minimo = estadisticas(10,20,30,40,50)
+print(f"Suma: {suma_total}\n Promedio: {promedio}\n Maximo: {maximo}\n Minimo: {minimo}")
+
+#Funcion lista y diccionario
+def procesar_datos(lista, diccionario):
+    """
+    Recibe lista y diccionario y los procesa de distinta manera
+    """
+    print("Procesando una lista")
+    for elemento in lista:
+        print(f"Elemento: {elemento}")
+    print("Procesando una diccionario")
+    for clave,valor in diccionario.items():
+        print(f"{clave} : {valor}")
+#crear lista y diccionario e invocar a mi funcion
+lista_ejemplo = [1,2,3,4,5]
+diccionario_ejemplo = {
+    "Saludo": "Hola",
+    "Despedida": "Adios",
+    "Numero": 666
+
+}
+procesar_datos(lista_ejemplo,diccionario_ejemplo)
+
+#Funcion recursiva
+
+def factorial(numero):
+    """
+    Calcula el factorial de un numero de manera recursiva.
+    """
+    if numero==0:
+        return 1
+    else:
+        return numero * factorial(numero-1)
+    
+#Llamar a la funcion factorial con el argumento 5
+resultado_factorial = factorial(5)
+print(f"El factorial de 5 es: {resultado_factorial}")
+#Funcion anidada: Una funcion dentro de otra.
+
+#Organizar el codigo
+
+def operacion_anidada(a,b):
+    def suma(numero1, numero2):
+        return numero1 + numero2
+    def multiplicacion(numero1, numero2):
+        return numero1 * numero2
+    resultado_suma = suma(a,b)
+    resultado_multiplicacion = multiplicacion(a,b)
+    return resultado_suma, resultado_multiplicacion
+
+#Llamar a mi funcion:
+resultado_suma, resultado_multiplicacion = operacion_anidada(4,5)
+print(f" La suma de 4 y 5 es: {resultado_suma}\n La multiplicacion de 4 y 5 es: {resultado_multiplicacion} ")
+
+
+# FUNCION DE TIPO LAMBDA - eleva numeros al cuadrado
+
+elevar_cuadrado = lambda x: x**2
+#Lista de numeros
+numeros = [1,2,3,4,5]
+#Usar la funcion map() va a aplicar mi funcion lambda a cada numero de mi lista
+#List() convierte cada numero o resultado a una lista
+numeros_cuadrados = list(map(elevar_cuadrado, numeros))
+print(f"Los numeros: {numeros} : elevado al cuadrado son: {numeros_cuadrados}")
