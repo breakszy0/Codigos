@@ -1,0 +1,31 @@
+def validar_lista_numeros():
+    while True:
+        try:
+            entrada = input("Ingresa una lista de números enteros separados por espacios: ")
+            numeros = [int(num) for num in entrada.split()]
+            return numeros
+        except ValueError:
+            print("Error: Ingresa solo números enteros válidos. Intenta nuevamente.")
+
+def clasificar_numeros(numeros):
+    pares = []
+    impares = []
+    for num in numeros:
+        if num % 2 == 0:
+            pares.append(num)
+        else:
+            impares.append(num)
+    return pares, impares
+
+def main():
+    numeros = validar_lista_numeros()
+    pares, impares = clasificar_numeros(numeros)
+    
+    print("Números pares:")
+    print(pares)
+    
+    print("Números impares:")
+    print(impares)
+
+if __name__ == "__main__":
+    main()
